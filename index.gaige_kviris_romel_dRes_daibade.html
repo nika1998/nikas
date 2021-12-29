@@ -1,0 +1,46 @@
+<html><head>
+  <a href="index.nikasblog.html">მთავარი</a>
+<style></style></head><body onload="startTime()" bgcolor="pink"><h4>გაიგე კვირის რომელ დღეს დაიბადე</h4>
+<script>
+p=prompt("შეიყვანეთ წელი, თვე, დღე ფორმატით: წელი-თვე-რიცხვი");
+var date1 = new Date(p);
+var year = date1.getFullYear();
+var month = date1.getMonth() + 1;
+var day = date1.getDate(); 
+var dgea=0;
+   var dge = date1.getDay();
+ if (day < 10) day = "0" + day;
+    switch(dge)
+    {
+        case 0: dgea = "კვირა"; break;
+        case 1: dgea = "ორშაბათი"; break;
+        case 2: dgea = "სამშაბათი"; break;
+        case 3: dgea = "ოთხშაბათი"; break;
+        case 4: dgea = "ხუთშაბათი"; break;
+        case 5: dgea = "პარასკევი"; break;
+        case 6: dgea = "შაბათი"; break;
+    }
+      if (month < 10) month = "0" + month;
+</script>
+
+<script language="javascript">
+ function startTime()
+ {
+    var date=new Date();
+    var hours = date.getHours();    
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+      if (hours < 10) hours = "0" + hours;
+      if (minutes < 10) minutes = "0" + minutes;
+     if (seconds < 10) seconds = "0" + seconds;   
+    document.getElementById("year1").innerHTML = year + "/" + month + "/" + day;
+    document.getElementById("day1").innerHTML = "ეს იყო კვირის შემდეგი დღე - " + dgea;
+ document.getElementById("time").innerHTML = "ახლა არის - " + hours + ":" + minutes + ":"+seconds;
+      setTimeout(startTime, 1000);
+ }
+</script> 
+ <b>შეყვანილია თარიღი: <span id="year1">NaN/NaN/NaN</span></b><br><br>
+
+<div id="day1">ეს იყო კვირის შემდეგი დღე - 0</div><br><br>
+<div id="time">ახლა არის - 18:48:44</div>
+</body></html>
