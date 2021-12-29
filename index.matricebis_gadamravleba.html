@@ -1,0 +1,69 @@
+<HTML> <HEAD> 
+  <a href="index.nikasblog.html">მთავარი<br></a>
+<TITLE> მატრიცების გადამრავლება </title> 
+</head> 
+<body bgcolor="CCFF99"> 
+<H2> მატრიცების გამრავლება </h2> 
+<P> შეგვყავს A მატრიცა </p> 
+<SCRIPT LANGUAGE="JavaScript"> 
+<!-- ვინიღბებით
+var a=new Array();
+for(i=0;i<=1;i++){
+a[i]=new Array();
+for(j=0;j<=2;j++){
+a[i][j]=prompt("შეიყვანეთ A მასივის "+i+", "+j+" ელემენტი");
+document.write( "a(" + i+ "," +j+ ")="+a[i][j]+"; "); 
+}
+document.write("<br>");
+};
+document.write("<P> შეგვყავს"+" B"+" მატრიცა </p>"); 
+var b=new Array();
+for(i=0;i<=2;i++){
+b[i]=new Array();
+for(j=0;j<=3;j++){
+b[i][j]=prompt("შეიყვანეთ B მასივის "+i+", "+j+" ელემენტი");
+document.write( "b(" + i+ "," +j+ ")="+b[i][j]+"; "); 
+}
+document.write("<br>");
+};
+document.write("<P>"+"ვითვლით A და B მასივების ნამრავლს C მასივში"+ "</p>"); 
+var c=new Array();
+for(i=0;i<=1;i++)
+{
+c[i]=new Array();
+for(j=0;j<=3;j++){
+s=0;
+for (k=0;k<=2;k++)
+s=s+a[i][k]*b[k][j];
+c[i][j]=s;
+document.write( "c(" + i+ "," +j+ ")="+c[i][j]+"; "); 
+}
+document.write("<br>");
+};
+function table (a) { //Вывод матрицы в таблицу HTML
+  var rows=a.length, cols;
+  document.writeln ('<table  cellpadding="4" cellspacing="0" border="0" ');
+  for (i=0; i<rows; i++) {
+   document.writeln ('<tr>');
+   cols=a[i].length;   
+   for (j=0; j<cols; j++) {
+    document.writeln ('<td>'+a[i][j]+'</td>'); 
+   }
+   document.writeln ('</tr>');
+  }
+  document.writeln ('</table>');
+ }
+document.write("<P>"+" A მატრიცა"+ "</p>"); 
+ table (a); //Построение таблицы
+ document.write("<P>"+" B მატრიცა"+ "</p>"); 
+ table (b);
+ document.write("<P>"+" C მატრიცა"+ "</p>"); 
+ table (c);
+ 
+ 
+//ვიხსნით ნიღაბს-->
+</script> 
+<br>
+<P> მატრიცების გადამრავლება დასრულებულია</p> 
+</body> 
+</html>   
