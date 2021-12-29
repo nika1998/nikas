@@ -1,0 +1,45 @@
+<html><head>
+<title>შექმენი ობიექტი ჯეისონი</title></head>
+<a href="index.nikasblog.html">მთავარი<br></a>
+<body bgcolor="FFE5CC">
+<h2> შექმენი ობიექტი ჯეისონი </h2>
+<p id="demo"></p>
+<script>
+
+var d = new Date();
+  var a = d.getDate();
+  var b = d.getMonth()+1;
+  var c = d.getFullYear();
+  var e = d.getFullYear();
+a = prompt("შეიყვანეთ დაბადების რიცხვი");
+b = prompt("შეიყვანეთ დაბადების თვის რიცხვი");
+document.write("<br>","დღეს არის ",a,".",b,".",c, "<br>");
+var text = '{"chveni_jgufi":['+
+    '{"firstName":"ნიკა", "lastName":"ტყებუჩავა","day":13,"month":12,"year":"1998","img":"nika.jpg"},'+
+    '{"firstName":"მარი", "lastName":"რეხვიაშვილი","day":"30","month":12,"year":"1997","img":"mari.jpg"},'+
+    '{"firstName":"მარიამ", "lastName":"ხალიჩავა","day":"8","month":7,"year":"2000","img":""},'+
+    '{"firstName":"ნინო", "lastName":"ცუცხუბაია","day":"29","month":9,"year":"2000","img":""},'+
+    '{"firstName":"რომან", "lastName":"შამათავა","day":"16","month":12,"year":"1997","img":""},'+
+    '{"firstName":"ვახტანგ", "lastName":"სართანია","day":"8","month":3,"year":"1999","img":""},'+
+    '{"firstName":"ნინო", "lastName":"ბაგალიშვილი","day":"17","month":3,"year":"1998","img":""},'+
+    '{"firstName":"ნადი", "lastName":"კოვალი","day":30,"month":12,"year":"1999","img":"nadi.jpg"},'+
+    '{"firstName":"ნათია", "lastName":"ცქიტიშვილი","day":"14","month":"2","year":"1999","img":""}]}';
+
+
+obj = JSON.parse(text);
+for(i=0;i<8;i++)
+{
+          if(obj.chveni_jgufi[i].day==a && obj.chveni_jgufi[i].month==b)
+                    {e=c-obj.chveni_jgufi[i].year; 
+                        if(e%5==0) {document.write("<h1>დღეს ",obj.chveni_jgufi[i].firstName," ",obj.chveni_jgufi[i].lastName,"ს საიუბილეო დაბადების დღე აქვს. შეუსრულდა ", e, " წელი</h1>");
+                                    document.write("<img src=",obj.chveni_jgufi[i].img, " width = 400 height = 400 marginLeft = 500>");}
+                              else {document.write("<h1>დღეს ",obj.chveni_jgufi[i].firstName," ",obj.chveni_jgufi[i].lastName,"ს დაბადების დღე აქვს.</h1>")
+                                    document.write("<img src=",obj.chveni_jgufi[i].img, " width = 400 height = 400 marginLeft = 500>");}};
+
+obj.chveni_jgufi[i].firstName + " " + obj.chveni_jgufi[i].lastName + " დაბადების თარიღი: " + obj.chveni_jgufi[i].day + "  " + obj.chveni_jgufi[i].month + " " + obj.chveni_jgufi[i].year +" წელი.";
+document.write("<br>");
+}
+
+</script>
+</body>
+</html>
